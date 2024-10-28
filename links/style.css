@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('https://fonts.cdnfonts.com/s/31977/Minecraftia.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Minecraftia', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.link {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.link-text {
+    margin-top: 5px;
+}
