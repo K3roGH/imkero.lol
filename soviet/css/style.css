@@ -1,0 +1,642 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Roboto+Condensed:wght@500&display=swap');
+@font-face {
+    font-family: minecraftia;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Minecraftia'),url(https://fonts.cdnfonts.com/s/31977/Minecraftia.woff) format('woff')
+}
+
+:root {
+  
+  --colorUsernameGlow: 0px 0px 16.5px #FFFFFF;
+  --usernameEffects: url(https://i.postimg.cc/R0Wczs1w/sparkle-white.gif);
+}
+
+.skid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.kero {
+  z-index: 1;
+  background-color: black;
+}
+.nothover {
+  display: block;
+}
+.hover {
+  display: none;
+  background: -webkit-linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  -webkit-background-size: 1800% 1800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  
+  -webkit-animation: rainbow 18s ease infinite;
+  font-size: 24px;
+}
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@media(hover: hover) {
+  .hover {
+    display: block;
+  }
+  .nothover {
+    display: none;
+  }
+}
+
+@keyframes fade{
+  to {
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  to {
+    visibility: hidden;
+  }
+  
+}
+    
+span::before {
+  content:'\A';
+  white-space:pre
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a:hover {
+  transition: all .4s!important;
+  text-shadow: 0 0 0.40em rgb(190, 190, 190);
+  cursor: url("../cursor.cur"), pointer;
+}
+
+#clickythingy:hover {
+    font-size: 32px!important;
+    transition: all .4s!important;
+    text-shadow: 0 0 0em rgb(190, 190, 190)!important;
+}
+
+html {
+  position: relative;
+  overflow-x: hidden; 
+  overflow-y: auto;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif !important;
+  color: #fff;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.profile-card-loc__icon #albumimage{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin: 10px, 0px
+
+}
+.wrapper {
+  width: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 50px 20px;
+  padding-top: 100px;
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+}
+
+.profile-card {
+  width: 100%;
+  min-height: 100px;
+  margin: auto;
+  max-width: 1280px;
+  position: relative;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(27,27,27,0.05);
+  background-image: linear-gradient(25deg, rgba(13, 13, 13, 0.05), rgba(13, 13, 13, 0.05));
+  background-origin: border-box;
+  border: 0px;
+  border-radius: 20px;
+  transition: opacity 1s,margin-bottom .6s;
+}
+.profile-card.active .profile-card__cnt {
+  filter: blur(6px);
+}
+.profile-card.active .profile-card-message,
+.profile-card.active .profile-card__overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0.1s;
+}
+.profile-card.active .profile-card-form {
+  transform: none;
+  transition-delay: 0.1s;
+}
+.profile-card__img {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  position: relative;
+  z-index: 4;
+}
+@media screen and (max-width: 576px) {
+  .profile-card__img {
+    width: 120px;
+    height: 120px;
+  }
+}
+.profile-card__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.profile-card__cnt {
+  margin-top: -35px;
+  text-align: center;
+  padding: 0 20px;
+  padding-bottom: 40px;
+  transition: all 0.3s;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.profile-card__name {
+  font-weight: 700;
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+  background-image: var(--usernameEffects);
+  text-shadow: var(--colorUsernameGlow);
+  width: fit-content;
+  font-family: minecraftia;
+  text-align: center;
+  margin: auto;
+}
+.profile-card__txt {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.profile-card__txt strong {
+  font-weight: 700;
+}
+.profile-card-loc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #D2D2D2;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+.profile-card-loc__icon {
+  display: inline-flex;
+  font-size: 27px;
+  margin-right: 10px;
+  color: #6944ff;
+}
+.profile-card-inf {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 35px;
+}
+.profile-card-inf__item {
+  padding: 10px 35px;
+  min-width: 150px;
+}
+@media screen and (max-width: 768px) {
+  .profile-card-inf__item {
+    padding: 10px 20px;
+    min-width: 120px;
+  }
+}
+.profile-card-inf__title {
+  font-weight: 700;
+  font-size: 27px;
+  color: #324e63;
+}
+.profile-card-inf__txt {
+  font-weight: 500;
+  margin-top: 7px;
+}
+.profile-card-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile-card-social__item {
+  display: inline-flex;
+  width: 55px;
+  height: 55px;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  font-size: 38px;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .profile-card-social__item {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .profile-card-social__item:hover {
+    transform: scale(1.2);
+  }
+}
+.profile-card-social .icon-font {
+  display: inline-flex;
+}
+.profile-card-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+@media screen and (max-width: 576px) {
+  .profile-card-ctr {
+    flex-wrap: wrap;
+  }
+}
+.profile-card__button {
+  background: none;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  margin: 15px 35px;
+  padding: 15px 40px;
+  min-width: 201px;
+  border-radius: 50px;
+  min-height: 55px;
+  color: #fff;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .profile-card__button {
+    min-width: 170px;
+    margin: 15px 25px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .profile-card__button {
+    min-width: inherit;
+    margin: 0;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 300px;
+  }
+  .profile-card__button:last-child {
+    margin-bottom: 0;
+  }
+}
+.profile-card__button:focus {
+  outline: none !important;
+}
+@media screen and (min-width: 768px) {
+  .profile-card__button:hover {
+    transform: translateY(-5px);
+  }
+}
+.profile-card__button:first-child {
+  margin-left: 0;
+}
+.profile-card__button:last-child {
+  margin-right: 0;
+}
+.profile-card__button.button--blue {
+  background: linear-gradient(45deg, #1da1f2, #0e71c8);
+  box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.4);
+}
+.profile-card__button.button--blue:hover {
+  box-shadow: 0px 7px 30px rgba(19, 127, 212, 0.75);
+}
+.profile-card__button.button--orange {
+  background: linear-gradient(45deg, #d5135a, #f05924);
+  box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.35);
+}
+.profile-card__button.button--orange:hover {
+  box-shadow: 0px 7px 30px rgba(223, 45, 70, 0.75);
+}
+.profile-card__button.button--gray {
+  box-shadow: none;
+  background: #dcdcdc;
+  color: #142029;
+}
+.profile-card-message {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 130px;
+  padding-bottom: 100px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.profile-card-form {
+  box-shadow: 0 4px 30px rgba(15, 22, 56, 0.35);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 35px;
+  transform: scale(0.8);
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .profile-card-form {
+    max-width: 90%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .profile-card-form {
+    padding: 20px;
+  }
+}
+.profile-card-form__bottom {
+  justify-content: space-between;
+  display: flex;
+}
+@media screen and (max-width: 576px) {
+  .profile-card-form__bottom {
+    flex-wrap: wrap;
+  }
+}
+.profile-card textarea {
+  width: 100%;
+  resize: none;
+  height: 210px;
+  margin-bottom: 20px;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: #324e63;
+  font-weight: 500;
+  font-family: "Quicksand", sans-serif;
+  outline: none;
+  transition: all 0.3s;
+}
+.profile-card textarea:focus {
+  outline: none;
+  border-color: #8a979e;
+}
+.profile-card__overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(22, 33, 72, 0.35);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.profile-card__img .card-status-online {
+  position: relative;
+  background: #3ba55d;
+  border: 9px solid #2b2d31;
+  border-radius: 50%;
+  margin: -40px 7.5px;
+  height: 45px;
+  width: 45px;
+  z-index: 999;
+  float: right;
+}
+.profile-card__img .card-status-dnd {
+    position: relative;
+    background: #ed4245;
+    border: 9px solid #2b2d31;
+    border-radius: 50%;
+    margin: -40px 7px;
+    height: 45px;
+    width: 45px;
+    z-index: 99;
+    float: right;
+}
+.profile-card__img .card-status-dnd:before{
+  content: " ";
+  width: 22px;
+  margin: 11px 2px;
+  position: absolute;
+  border-bottom-color: #2b2d31;
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
+  border-radius: 8px;
+}
+
+.profile-card__img .card-status-idle {
+    position: relative;
+    background: #faa81a;
+    border: 9px solid #2b2d31;
+    border-radius: 50%;
+    margin: -40px 7.5px;
+    height: 45px;
+    width: 45px;
+    z-index: 99;
+    float: right;
+}
+
+.profile-card__img .card-status-idle:before {
+    content: "";
+    width: 6px;
+    height: 4px;
+    margin: -2px;
+    position: absolute;
+    border-color: #2b2d31;
+    border-width: 0.5em;
+    border-style: solid;
+    border-radius: 50%;
+    background: #2b2d31;
+}
+
+.profile-card__img .card-status-offline {
+    position: relative;
+    background: #2b2d31;
+    border: 9px solid #2b2d31;
+    border-radius: 50%;
+    margin: -40px 7.5px;
+    height: 45px;
+    width: 45px;
+    z-index: 99;
+    float: right;
+}
+.profile-card__img .card-status-offline:before {
+    content: "";
+    margin: -3px;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    border-color: #747f8d;
+    border-width: 7px;
+    border-style: solid;
+    border-radius: 50%;
+    background: #2b2d31;
+}
+.statetxt {
+    font-family: Minecraftia;
+    font-size: 24px;
+    margin-top: 14px;
+}
+
+.text-green-500{
+    color: #3ba55d
+}
+
+.text-red-500{
+    color: #ed4245
+}
+
+.text-yellow-500{
+    color: #faa81a
+}
+
+.text-gray-500{
+    color: #747f8d
+}
+
+.songtext {
+    color: #FFFFFF
+}
+
+.profile_description {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hover {
+  text-align: center;
+  font-family: minecraftia;
+}
+
+.nothover {
+  text-align: center;
+  font-family: minecraftia;
+}
+  
+.hover:checked ~ .term {
+  animation-fill-mode: forwards;
+  animation-name: fade, hide;
+  animation-delay: 0s, 600ms;
+  animation-duration: 900ms, 1ms;
+}
+
+#thingtofade {
+    opacity: 1;
+    transition: opacity 1.5s; 
+}
+
+#thingtofade.fade {
+  opacity: 0;
+}
+
+.ugh {
+    font-family: minecraftia;
+    font-size: 18px;
+    text-align: center;
+}
+
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+.profile-card__cnt p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+  font-size: 10px;
+}
+
+.backgroundvid {
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1
+}
+
+#ethereum:hover {
+  transition:.4s!important;
+  text-shadow: 0 0 0.40em rgb(190, 190, 190);
+  cursor: url("../cursor.cur"), pointer;
+}
+
