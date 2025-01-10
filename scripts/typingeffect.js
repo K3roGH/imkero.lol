@@ -1,7 +1,7 @@
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["I fw halloween", "guns.lol/brainwash", "This is cool", "Hey people :D", "Probably smoking the opps on rust rn", "ct6j on discord", "can you donate to my ltc pls :)"];
+const textArray = ["I eat chocolate", "guns.lol/brainwash", "This is cool", "Hey people :D", "Probably smoking the opps on rust rn", "xyntory on discord", "Give crypto uwu"];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 1000;
